@@ -1,6 +1,6 @@
 const one = 1;
-var two = 2;
-let three = 3;
+var two = "Two";
+let three = "Three";
 
 console.log(one);
 console.log(two);
@@ -20,3 +20,10 @@ var six = 6;
 var six = 7; // This is allowed because we can re-declare and update a var variable.
 
 seven = 7; // This is allowed because we can declare a variable without var, let or const and it will be treated as a global variable.but it is not recommended to do so.
+
+let eight;
+console.log(eight); // This will print undefined because we have declared the variable but not assigned any value to it.
+
+console.log(typeof undefined); // This will print "undefined" because the type of undefined is undefined.
+
+console.log(typeof null); // This will print "object" because the type of null is object. This is a bug in JavaScript but it has been kept for backward compatibility.
