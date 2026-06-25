@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color: #ffffff">
+    <ul class="languages">
+        <li>JavaScript</li>
+        
+    </ul>
+    
+</body>
+<script>
+    function addlanguage(langname){
+        const li=document.createElement('li');
+        li.innerHTML=langname;
+        const ul=document.querySelector('.languages').appendChild(li);
+    }
+    addlanguage('Python');
+    addlanguage('C++');
+    addlanguage('Java');
+
+    function addOptionalLanguage(langname){
+        const li=document.createElement('li');
+        li.appendChild(document.createTextNode(langname));
+        document.querySelector('.languages').appendChild(li);
+    }//better way to add text node to li
+    addOptionalLanguage('C#');
+    addOptionalLanguage('Go');
+    // addOptionalLanguage('Rust')
+
+    //Edit
+    const SecondLang=document.querySelector("li:nth-child(2)")
+    // console.log(SecondLang);
+    
+    // SecondLang.innerHTML="Mojo";
+    const newli=document.createElement('li')
+    newli.textContent = "Mojo"
+    SecondLang.replaceWith(newli)
+
+    //Edit
+    const firstLang=document.querySelector("li:first-child")
+    firstLang.outerHTML='<li>TypeScript</li>'
+
+    //remove
+    const lastLang=document.querySelector("li:last-child")
+    lastLang.remove()
+</script>
+</html>
